@@ -1,12 +1,34 @@
+#Guest Additions
 sudo ./VBoxLinuxAdditions.run
 sudo usermod -aG vboxsf $USER
 
-
+# Jdk y maven
 sudo apt install openjdk-21-jdk
-curl -s "https://get.sdkman.io" | bash
+sudo apt install maven
 
+#Lo mismo pero mediante sdkman
+curl -s "https://get.sdkman.io" | bash
 
 sdk install java 21.0.6-tem
 sdk install maven 3.9.9
 
+# Instalamos git
 sudo apt install git
+
+#Configuramos usuario y su correo (es lo que queda en el commit)
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+
+# Descarga el script de instalación e instala docker
+git clone https://github.com/desarrollo-seguro/docs.git
+cd docs
+./instalar-docker.sh
+
+# Reiniciamos la máquina y probamos que está instalado correctamente
+docker run hello-world
+
+# Descargamos postgres
+docker pull postgres
+
+
