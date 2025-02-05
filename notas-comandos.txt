@@ -31,4 +31,10 @@ docker run hello-world
 # Descargamos postgres
 docker pull postgres
 
+# Ejecutar postgres (por ahora sin volúmenes)
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+
+# Instalamos DBeaver
+flatpak install flathub io.dbeaver.DBeaverCommunity
+
 
